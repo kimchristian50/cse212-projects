@@ -9,9 +9,10 @@ public static class Arrays
     public static double[] MultiplesOf(double number, int length)
     {
         // Make an empty array to fill with the multiples
-        // A loop needs to run length times
-        // Each time it runs, the number should be multiplied by i and added to the array
-        // 
+        // A loop needs to run length times to create all the doubles
+        // Run the loop and for each pass, multiply the number by i and add that to the array
+        // The index for the number being added is i-1 since the index needs to start at 0
+        // When i gets to length, the array is complete.
 
         var newList = new double[length];
 
