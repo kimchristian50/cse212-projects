@@ -47,7 +47,7 @@ public class TakingTurnsQueue
                 person.Turns -= 1;
                 _people.Enqueue(person);
             }
-            else if (person.Turns <= 0)
+            else if (person.Turns <= 0)   // defect found - added this so people with infinite turns stay in the queue
             {
                 // Person has infinite turns, so they stay in the queue.
                 _people.Enqueue(person);
