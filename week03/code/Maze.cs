@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 /// <summary>
 /// Defines a maze using a dictionary. The dictionary is provided by the
 /// user when the Maze object is created. The dictionary will contain the
@@ -25,14 +27,21 @@ public class Maze
         _mazeMap = mazeMap;
     }
 
-    // TODO Problem 4 - ADD YOUR CODE HERE
     /// <summary>
     /// Check to see if you can move left.  If you can, then move.  If you
     /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
     /// </summary>
     public void MoveLeft()
     {
-        // FILL IN CODE
+        // left is the first bool in the array
+        var canMoveLeft = _mazeMap[(_currX, _currY)][0];
+
+        if (!canMoveLeft)
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+
+        _currX -= 1;
     }
 
     /// <summary>
@@ -41,8 +50,17 @@ public class Maze
     /// </summary>
     public void MoveRight()
     {
-        // FILL IN CODE
+        // right is the second bool in the array
+        var canMoveRight = _mazeMap[(_currX, _currY)][1];
+
+        if (!canMoveRight)
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+
+        _currX += 1;
     }
+
 
     /// <summary>
     /// Check to see if you can move up.  If you can, then move.  If you
@@ -50,8 +68,17 @@ public class Maze
     /// </summary>
     public void MoveUp()
     {
-        // FILL IN CODE
+        // up is the third bool in the array
+        var canMoveUp = _mazeMap[(_currX, _currY)][2];
+
+        if (!canMoveUp)
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+
+        _currY -= 1;
     }
+
 
     /// <summary>
     /// Check to see if you can move down.  If you can, then move.  If you
@@ -59,8 +86,17 @@ public class Maze
     /// </summary>
     public void MoveDown()
     {
-        // FILL IN CODE
+        // down is the fourth bool in the array
+        var canMoveDown = _mazeMap[(_currX, _currY)][3];
+
+        if (!canMoveDown)
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+
+        _currY += 1;
     }
+
 
     public string GetStatus()
     {
